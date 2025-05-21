@@ -13,7 +13,7 @@ function changeMode(difficulty) {
 }
 
 
-async function setup(mode, theme) {
+async function setup(mode) {
   reset();
   $("#game_grid").empty();
   switch (mode) {
@@ -119,6 +119,9 @@ function reset() {
   if($(".card").hasClass("flip")) {
     $(".card").removeClass("flip");
   }
+  if ($("#powerup").hasClass("used")) {
+    $("#powerup").removeClass("used");
+  }
   clicks = 0;
   pairsLeft = mode == "easy" ? 4 : mode == "normal" ? 8 : mode == "hard" ? 12 : 0;
   totalPairs = mode == "easy" ? 4 : mode == "normal" ? 8 : mode == "hard" ? 12 : 0;
@@ -136,7 +139,6 @@ function reset() {
 }
 
 function powerup() {
-  console.log("red");
   $("#powerup").removeClass("show");
   $("#powerup").addClass("used");
   $(".screen_block").addClass("show");
