@@ -1,0 +1,200 @@
+body.game-container {
+  margin: 0px;
+  font-family: Roboto;
+  background-color: white;
+}
+
+#game_grid {
+  border: 2px lightcoral solid;
+  width: 1000px;
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 25px 0;
+}
+
+#game_grid.hard {
+  width: 1500px;
+}
+
+
+.card {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  transition: transform 1s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  border: solid 2px black;
+  margin: 10px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+
+img {
+  width: 100%
+}
+
+.front_face,
+.back_face {
+  position: absolute;
+  backface-visibility: hidden;
+}
+
+
+.flip {
+  transform: rotateY(180deg);
+}
+
+.powerup_flip {
+  transform: rotateY(180deg);
+}
+
+
+.front_face {
+  transform: rotateY(180deg);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  padding: 10px 100px;
+  border: solid 1px black;
+  background-color: lightcoral;
+  color: black;
+}
+
+.header div {
+  display: flex;
+  justify-content: space-around;
+}
+
+.header div>* {
+  width: 10%;
+  text-align: center;
+  padding: 5px 10px;
+}
+
+
+
+.victory, .defeat {
+  display: none;
+  position: absolute;
+  background-color: white;
+  border: solid 1px black;
+  right: 600px;
+  left: 600px;
+  top: 300px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.screen_block {
+  display: none;
+  position: absolute;
+  right: 0;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  z-index: 999;
+}
+
+.hide {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+button {
+  border-radius: 10px;
+}
+
+button:hover {
+  background-color: lightgray;
+}
+
+button:active {
+  background-color: white;
+}
+
+.theme {
+  display: flex;
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  border: solid 2px black;
+  padding: 5px;
+  border-radius: 20px;
+  background-color: whitesmoke;
+  cursor: pointer;
+}
+
+.theme p {
+  margin: 5px;
+  padding: 15px;
+  border-radius: 15px;
+  color: black;
+}
+
+.theme p.selected {
+  background-color: black;
+  color: white;
+}
+
+.game-container.theme-dark {
+  background-color: black;
+  color: lightcoral;
+}
+
+.theme-dark .card {
+  background-color: lightcoral;
+}
+
+#powerup {
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.2);
+  /* Black w/opacity/see-through */
+  position: absolute;
+  background-color: white;
+  border: solid 1px black;
+  top: 300px;
+  right: 100px;
+  text-align: center;
+  padding: 10px;
+  width: 350px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.rainbow {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 5px;
+  text-wrap: wrap;
+}
+
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff, #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%, 100% {
+    background-position: 0 0;
+  }
+
+  50% {
+    background-position: 100% 0;
+  }
+}

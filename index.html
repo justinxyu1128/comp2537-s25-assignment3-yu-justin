@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- import jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="index.js"></script>
+</head>
+
+<body class="game-container">
+  <header class="header">
+    <div>
+      <p>Clicks: <span class="clicks"></span></p>
+      <p>Pairs left: <span class="pairsLeft"></span></p>
+      <p>Total Pairs: <span class="totalPairs"></span></p>
+      <p>Pairs Matched: <span class="pairsMatched"></span></p>
+      <p>Time Remaining: <span class="timeRemaining"></span></p>
+    </div>
+    <div>
+      <button type="button" id="reset">Reset</button>
+      <button type="button" id="start">Start</button>
+      <button type="button" id="easy">Easy</button>
+      <button type="button" id="normal">Normal</button>
+      <button type="button" id="hard">Hard</button>
+    </div>
+  </header>
+  <div id="game_grid">
+    <h1>Play Pokemon Match! Pick a mode and press Start!</h1>
+    <h3>Please note that there is a brief delay before the images load.</h3>
+  </div>
+  <div class="victory">
+    <h2>You Win!</h2>
+  </div>
+  <div class="defeat">
+    <h2>You Lost!</h2>
+  </div>
+  <div id="powerup" class="hide">
+    <h2 class="rainbow rainbow_text_animated">Click Here for FREE Powerup!</h2>
+  </div>
+  <div class="screen_block"></div>
+  <div class="theme">
+    <p class="theme-btn dark">Dark</p>
+    <p class="theme-btn light selected">Light</p>
+  </div>
+  <template id="pokemon_card">
+    <div class="card">
+      <img id="img1" class="front_face" src="001.png" alt="pokemon">
+      <img class="back_face" src="back.webp" alt="pokemon back">
+    </div>
+  </template>
+</body>
+
+</html>
